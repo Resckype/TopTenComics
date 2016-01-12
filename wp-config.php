@@ -16,22 +16,29 @@
  *
  * @package WordPress
  */
-
-// ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
-/** Nom de la base de données de WordPress. */
-define('DB_NAME', 'toptencomics');
-
-/** Utilisateur de la base de données MySQL. */
-define('DB_USER', 'root');
-
-/** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', '');
-
-/** Adresse de l'hébergement MySQL. */
-define('DB_HOST', 'localhost');
+$host = php_uname('n');
+var_dump($host);
+if ($host == "193"){
+	define("ENVIRONMENT","develop");
+}
+else{
+	define("ENVIRONMENT","production")
+}
+if (ENVIRONMENT == "develop"){
+	define('DB_NAME', 'toptencomics');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_HOST', 'localhost');
+}
+else{
+	define('DB_NAME', 'toptencomics');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_HOST', 'localhost');
+}
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** Type de collation de la base de données.
   * N'y touchez que si vous savez ce que vous faites.
