@@ -18,6 +18,7 @@
  */
 $host = php_uname('n');
 var_dump($host);
+/* Attention, il faut bien penser à changer le nom de l'ordinateur */
 if ($host == "193"){
 	define("ENVIRONMENT","develop");
 }
@@ -88,7 +89,7 @@ $table_prefix  = 'ttc_wp_';
 	 define('WP_DEBUG', true);
  }
 else{
-	 define('WP_DEBUG', false); 
+	 define('WP_DEBUG', false);
  }
 /* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */
 
