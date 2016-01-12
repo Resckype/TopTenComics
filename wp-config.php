@@ -84,8 +84,12 @@ $table_prefix  = 'ttc_wp_';
  * de thèmes se servent de WP_DEBUG dans leur environnement de
  * développement.
  */
-define('WP_DEBUG', false);
-
+ if (ENVIRONMENT == "develop"){
+	 define('WP_DEBUG', true);
+ }
+else{
+	 define('WP_DEBUG', false); 
+ }
 /* C'est tout, ne touchez pas à ce qui suit ! Bon blogging ! */
 
 /** Chemin absolu vers le dossier de WordPress. */
